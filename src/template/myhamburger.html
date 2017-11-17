@@ -1,0 +1,13 @@
+<div data-ng-controller="dhHamburgerController" >
+	<div data-ng-class="{myHamburgerMenu : true,myHamburgerChange : utility.hamburgerState === 1 }" data-ng-click="change_Menu();">
+		<div class="bar1"></div>
+		<div class="bar2"></div>
+		<div class="bar3"></div>
+	</div>
+	 <div data-ng-class="{myHamburgerMenuBox : true,animated : true, slideInRight : utility.hamburgerState === 1,slideOutRight :  utility.hamburgerState === 0}" data-ng-hide="utility.hamburgerState === 2"> 
+	     <a class="menuItem" data-ng-click="change_Menu();" href="#!register"><p><i class="fa fa-user-plus" aria-hidden="true"></i>&nbsp;{{ data.menu2 }}</p></a>
+		 <a class="menuItem" data-ng-click="change_Menu();" href="#!loadProfile"><p><i class="fa fa-folder" aria-hidden="true"></i>&nbsp;{{user.loggedIn ? 'Manage Profiles' : data.menu1 }}</p></a>
+		 <a class="menuItem" data-ng-click="change_Menu();" href="#!Macros"><p><i class="fa fa-calculator" aria-hidden="true"></i>&nbsp;{{ data.menu5 }}</p></a>	
+         <a class="menuItem" data-ng-click="change_Menu();" href="#!RecipeBook"><p><i class="fa fa-book" aria-hidden="true"></i>&nbsp;{{ data.menu3 }}</p></a>
+         <a class="menuItem" data-ng-click="change_Menu();" href="#!FoodBrowser"><p><i class="fa fa-list-ul" aria-hidden="true"></i>&nbsp;{{ data.menu4 }}</p></a> 
+	</div>

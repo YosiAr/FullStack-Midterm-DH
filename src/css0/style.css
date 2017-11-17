@@ -1,0 +1,132 @@
+body {
+    font-family: 'Encode Sans', sans-serif;
+}
+
+label {
+    display: block;
+    margin: 20px;
+}
+
+input {
+    padding: 5px;
+    font-size: 16px;
+}
+
+select {
+    padding: 5px;
+    font-size: 16px;
+}
+
+label span {
+    display: inline-block;
+    width: 200px;
+    text-align: right;
+    margin-right: 20px;
+}
+
+.gender label {
+    display: inline-block;
+    margin: 0px;
+}
+
+.submit-wrapper {
+    width: 600px;
+}
+
+.submit-btn {
+    font-size: 20px;
+    padding: 10px;
+    margin: 0 auto 50px;
+    display: block;
+}
+
+.alert {
+    border-radius: 5px;
+    padding: 20px 50px;
+    margin: 50px;
+}
+
+.alert-success {
+    background-color: #c9ff8b;
+    color: #2d4e07;
+}
+
+.alert-error {
+    background-color: #ff8b8b;
+    color: #4e0707;
+}
+
+.top-bar {
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #c9ff8b;
+    color: #2d4e07;
+}
+
+.menu li {
+    display: inline;
+}
+
+.task-box {
+    float: left;
+    border: 2px solid #ccc;
+    margin: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+
+.completed-box {
+    color: #aaa;
+    background-color: #eee;
+    text-decoration: line-through;
+}
+
+.important-box {
+    color: #000;
+    font-weight: bold;
+}
+
+.public-box {
+    border-color: #080;
+    background-color: #bcffbc;
+}
+
+.friend-task-box {
+    border-color: #ff0;
+}
+
+.tdesc {
+    color: #009;
+}
+
+.btn {
+    color: #fff;
+    background-color: #559;
+    border-radius: 3px;
+    font-size: 12px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#hideGLBtn, #globalContent {
+    display: none;
+}
+
+.btn-delete {
+    color: #f00 !important;
+}
+
+.counter {
+    text-align: center;
+}
+
+.counter {
+    color: #f00;
+    animation: blinker 1s linear 3;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
+}

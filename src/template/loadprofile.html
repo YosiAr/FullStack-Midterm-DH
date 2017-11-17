@@ -1,0 +1,10 @@
+<div class="article" data-ng-controller="dhUserLoadController">
+  <div data-ng-class="{'regProfile':true}"><h1>{{user.loggedIn ? data.lmodule.manage : data.lmodule.load }} <br>{{data.lmodule.profiles}}</h1></div>	
+  <myprofileload></myprofileload>
+   <div class="myBtnBox myBoxRight"><button data-ng-class="{'myButton':true}" data-ng-click="utility.my_Move('/'); ">
+      <h4>{{data.lmodule.return}}</h4></button></div>
+ <div class="myBtnBox myBoxLeft"><button data-ng-class="{'myButton':true}" data-ng-click="utility.my_Move('/Macros'); ">
+      <h4>{{data.lmodule.macros}}</h4></button></div>
+	  <div class="filler"></div>
+</div>
+

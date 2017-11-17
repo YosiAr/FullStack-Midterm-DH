@@ -1,0 +1,46 @@
+  
+<!--Header -->
+<h2>{{ data.lmodule.topicSport }}?
+	  <div class="tooltip" data-help="{{ help.help.helpRegularSport }}"><p><i class="fa fa-question-circle" aria-hidden="true"></i></p>
+	  </div>
+</h2>
+<!--Sport that user add-->
+<div class="myWorkout">
+   <!--Buttons to choose if add todays workout-->
+  <div class="myBoxFlexRow">  
+	<button data-ng-class="{'myButton2':true,'selected' : user.current.macros.sportToday === 1}" data-ng-click="set_Sport_Activity(1)">
+              <h6>{{ data.lmodule.yes }}</h6>
+	</button> 
+	<button data-ng-class="{'myButton2':true,'selected' : user.current.macros.sportToday === 0}" data-ng-click="set_Sport_Activity(0)">
+              <h6>{{ data.lmodule.no }}</h6>
+	</button> 
+  </div>
+  <div class="myPadding" data-ng-show="user.current.macros.sportToday === 1"></div>  
+  <div data-ng-show="user.current.macros.sportToday === 1" class="myDataOutput">
+	<ul>
+		<li>
+			<div class="myBoxFlexRow myNoOverflow myWordWrap">
+			         <h6 class="showFood" data-ng-click="show_Food(food.name);">{{ user.current.sport }}&nbsp;&nbsp;</h6>  
+			         <h6>{{data.lmodule.calorie}}&nbsp;&nbsp;</h6>
+				     <h6 class="showFood" data-ng-click="delete_Sport();"><i class="fa fa-times" aria-hidden="true"></i></h6>
+			</div>
+		</li>
+	</ul>
+    <div class="myBoxFlexRow">	
+		   <div class="myBoxFlexRow myBlack">	       
+	           <h6>{{ data.lmodule.calorie + " " }}{{ data.lmodule.spend + " " }}</h6>
+			   <div class="myPadding"></div>
+	           <div data-ng-class="{myBoxFlexColumn : true}">
+	                 <input type="number" data-ng-model="sport" name="field1" class="myInput" placeholder="{{ data.lmodule.calorie }}" />
+			   </div> 
+		   </div> 
+		   <button data-ng-class="{'myButton2':true}" data-ng-click="add_Sport_Entry(sport); ">
+                    <h6>{{ data.lmodule.add }}</h6>
+		   </button>
+	</div> 
+  </div> 
+  <div class="myPadding" data-ng-show="user.current.macros.sportToday === 1"></div>  
+<!--  <myworkoutcalc></myworkoutcalc>-->
+  <div class="filler"></div>
+</div>
+	

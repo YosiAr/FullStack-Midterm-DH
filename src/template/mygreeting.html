@@ -1,0 +1,8 @@
+<div  id="myGreeting" class="myGreeting">
+		{{  user.loggedIn ? null : data.lmodule.hello }} 
+		{{ user.loggedIn ?  user.email : null }}
+		{{ user.loggedIn ? data.lmodule.loggedI : null }}
+		{{ user.current.gender=='Man' ? data.lmodule.mr :  null}}
+		{{user.current.gender=='Woman' ? data.lmodule.ms :  null}}
+		{{user.current.name ? user.current.name : data.lmodule.guest }}
+</div>

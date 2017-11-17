@@ -1,0 +1,22 @@
+<div class="loadWindow">
+	   <h4>{{ data.lmodule.email }}:<div class="tooltip" data-help="{{ help.help.helpEmail }}"><i class="fa fa-question-circle" aria-hidden="true"></i></div>&nbsp;</h4>
+	   <input  name="email" type="text" data-ng-model="user.email" data-ng-placeholder="user.email : user.email">
+		 <div class="filler"></div>
+	   <h4>{{ data.lmodule.password }}:</h4>
+	   <input name="password" type="password" data-ng-model="user.password" data-ng-placeholder="user.password : user.password">
+		 <div class="filler"></div>
+		<h4>{{ data.lmodule.topicChoosePN }}:</h4>
+    <div class="filler"></div>
+    <label>
+	   <input name="profileName" type="text" data-ng-model="user.current.name" data-ng-placeholder="user.current.name : user.current.name"></label>
+		 <div class="filler"></div>
+	   <div data-ng-class="{selector : user.password && user.email,disabledSelector : !(user.password && user.email && user.current.name) }" data-ng-click="(user.password && user.email && user.current.name) ? user.myMethod(server.save.bind(user)) : null;"><p>{{ data.lmodule.save }}</p></div>
+		 <div class="filler"></div>
+		 <div data-ng-show="user.profile">
+		  <h4>{{ data.lmodule.topicYourProfiles }}:</h4>
+		 <div class="filler"></div>
+		  <ul>
+              <li data-ng-class="{ 'selectorLi' : true,'selected' : user.current.name === user.profile[user.profile.indexOf(prof)].name}" data-ng-repeat="prof in user.profile | orderBy : '-lastDate'">{{ prof.name }} {{data.lmodule.lastUpd}}:  {{ prof.lastDate }}</li>
+          </ul>
+	  </div>
+	</div>

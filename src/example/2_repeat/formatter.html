@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en-US" data-ng-app="">
+<head>
+  <title>Home</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+<!-- array of objects -->
+<div ng-init="customers=[
+  {name: 'yossi', city: 'bialik'},
+  {name: 'oren', city: 'haifa'},
+  {name: 'arie', city: 'haifa'},
+  {name: 'tom', city: 'tveria'}
+]">
+
+<ul>
+  <li ng-repeat="cust in customers">
+    {{ cust.name | uppercase}} {{ cust.city  | lowercase}}</li>
+</ul>
+</div>
+</body>
+</html>

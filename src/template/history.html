@@ -1,0 +1,8 @@
+<div class="article" data-ng-controller="dhHistoryController">
+  <div data-ng-class="{'regProfile':true}"><pre><h1>{{user.current.gender ? data.lmodule.headerEditP : data.lmodule.headerCreateP}} </h1></pre></div>
+	
+      <div class="myBtnBox myBoxRight"><button data-ng-class="{'myButton':true}" data-ng-click="utility.my_Move('/'); ">
+      <h4>{{ data.lmodule.return }}</h4></button></div>	
+	  <div class="filler"></div>
+	<myquestionbox  data-ng-show="showCreateProfile"></myquestionbox>
+</div>

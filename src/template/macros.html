@@ -1,0 +1,43 @@
+<div class="article" data-ng-controller="dhMacrosController">
+<div data-ng-class="{'regProfile':true,myBlue:utility.macrosPage === 1,myRosybrown:utility.macrosPage === 2,myGreen:utility.macrosPage === 3}"><pre><h1 data-ng-class="{myBlue:utility.macrosPage === 1,myRosybrown:utility.macrosPage === 2,myGreen:utility.macrosPage === 3}">{{ set_Header();}} </h1></pre></div>
+<mymacros>
+</mymacros>
+      <div class="myBtnBox myBoxRight"><button data-ng-class="{'myButton':true}" data-ng-click="utility.my_Move('/'); ">
+      <h4>{{ data.lmodule.return }}</h4></button></div>	
+	  <div class="filler"></div>
+	  
+</div>
+
+<div data-ng-controller="dhShowProductWindow" data-ng-show="data.showProductWindow" data-ng-class="{myBoxFlexColumn : true,myDataOutput : true,myAddProduct:true}">
+	   <div>
+	      <h6>{{ data.myProductItem.name }}</h6>
+	   </div>  
+	   <div>
+	     <p>{{ data.lmodule.prot }}:</p>
+	     <p>{{ data.myProductItem.prot }}</p>
+	   </div>
+	   <div>
+	     <p>{{ data.lmodule.carb }}:</p>
+	     <p>{{ data.myProductItem.carb }}</p>
+	   </div>
+	   <div>
+	     <p>{{ data.lmodule.fat }}:</p>
+	     <p>{{ data.myProductItem.fat }}</p>
+	   </div>
+	   <div>
+	     <p>{{ data.lmodule.calorie }}:</p>
+	     <p>{{ data.myProductItem.calorie }}</p>
+	   </div>
+	   <div data-ng-class="{myBoxFlexRow : true}">
+		 <div class="myPadding"></div>
+		 <div class="myBtnBox">       
+			<button data-ng-class="{'myButton':true}" data-ng-click="cancel_Show_Product();">
+                <h6>{{ data.lmodule.return }}</h6>
+		    </button>
+         </div>
+		 <div class="myPadding"></div>
+	   </div>	
+</div>
+
+  
+	

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US" data-ng-app="">
+<head>
+  <title>Home</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+</head>
+<body>
+<!-- array of objects -->
+<div ng-controller="SimpleController">
+  <h1>{{ title }}</h1>
+  <p>Search : <input type="text" data-ng-model="nameText"></p>
+  <ul>
+    <li ng-repeat="cust in customers | orderBy: 'name' | filter: nameText">
+      {{ helloName(cust.name) }}<br />
+      {{ cust.name}} {{ cust.city}}</li>
+  </ul>
+</div>
+<script type="text/javascript">
+function SimpleController ($scope) {
+    $scope.customers = [
+      {name: 'yossi', city: 'bialik'},
+      {name: 'oren', city: 'haifa'},
+      {name: 'arie', city: 'haifa'},
+      {name: 'tom', city: 'tveria'}
+    ];
+
+    $scope.title = 'demo of simple controller';
+
+    $scope.helloName = function helloName (nm) {
+      return 'Hello ' + nm;
+    }
+}
+</script>
+</body>
+</html>

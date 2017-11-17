@@ -1,0 +1,14 @@
+<div class="pageMacros">
+        <div data-ng-class="{selectPage : true,selectPage1:true,selectedPage : utility.macrosPage === 1}" data-ng-click="utility.macrosPage = 1"><h6>{{ data.lmodule.macros }}</h6></div>
+        <div data-ng-class="{selectPage : true,selectPage2:true,selectedPage : utility.macrosPage === 2}" data-ng-click="utility.macrosPage = 2"><h6>{{ data.lmodule.sport }}</h6></div>
+        <div data-ng-class="{selectPage : true,selectPage3:true,selectedPage : utility.macrosPage === 3}" data-ng-click="utility.macrosPage = 3"><h6>{{ data.lmodule.progress }}</h6></div>
+    <mypagemacros data-ng-controller="dhMacrosCalcController"></mypagemacros>
+	<mypagesport  data-ng-controller="dhMacrosSportController"></mypagesport>
+    <mypageprogress  data-ng-controller="dhMacrosProgressController"></mypageprogress>  
+</div>
+	<div data-ng-controller="dhNewDayController" data-ng-show="utility.macrosPage === 1" class="myBtnBox myBoxLeft">       <button data-ng-class="{'myButton':true}" data-ng-click="new_Day();">
+           <h4>{{ data.lmodule.bNewDay }}</h4>
+		</button>
+    </div>
+
+	

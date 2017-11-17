@@ -1,0 +1,941 @@
+/*this is css for Diet Helper*/
+.filler{
+	clear:both;
+}
+/*hamburger  menu*/
+.myHamburgerMenu{
+	position: fixed;
+	top:20px;
+	right:25px;
+	z-index: 99;
+}
+.myHamburgerMenuBox{
+	padding-top: 60px;
+	position: fixed;
+	top:0px;
+	right:0px;
+	z-index: 98;
+	height:100vh;
+	width:40vw;
+	background: rgba(0,0,0,0.7);
+	background-image: url('../images/logo2w.png');
+    background-repeat: repeat-x;
+    background-position:bottom right;
+    background-size: 25% auto;
+}
+.myHamburgerMenuBox .menuItem{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+	height: 8vh;
+	width: 100%;
+	margin-bottom: 2%;
+	font-size: 120%;
+}
+.myHamburgerMenuBox .menuItem:hover{
+	color: #E5CBAD;
+	cursor: pointer;
+}
+.myHamburgerMenu:hover{
+	cursor: pointer;
+}
+.myHamburgerMenu div{
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+	box-shadow:  2px 2px 1px 0 rgba(0,0,0,0.6);
+	transition: ease-out 0.1s;
+}
+.myHamburgerChange .bar1{
+	-webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+.myHamburgerChange .bar2{
+	opacity: 0;
+}.myHamburgerChange .bar3{
+	-webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+}
+/*Angular pages content*/
+.calculator p,.myWorkout p,.loadWindow p{
+	color:greenyellow;
+}
+h1,h2,h3,h4,h5,h6,h7,h8,.calculator i{
+	color: beige;
+	margin:2% auto;
+	margin-left: 4%;
+	text-shadow: 2px 2px 4px #000000; 
+}
+.myWorkout i{
+	color: darkgrey;
+	margin:2% auto;
+}
+.foodList i{
+	color: black;
+	margin:0;
+	text-shadow: 2px 2px 4px grey; 
+}
+.showFood:hover,.foodList i:hover{
+	cursor: pointer;
+	color: blueviolet;
+	text-decoration: underline;
+}
+h1{
+	color:#8C79DF;
+}
+h3{
+	width:40%;
+	float:left;
+	margin-left: 4%;
+}
+h4{
+	float:left;
+/*	margin:2% auto;*/
+	font-size: 2vw;
+}
+h5{
+	width:80%;
+	font-size: 4vmax;
+	margin-bottom: 20px;
+	z-index: 50;
+	margin-left: 8%;
+}
+h6{
+	font-size: 2vw;
+	margin: 0;
+	padding: 0;
+}
+h7{
+	font-size: 1.4vw;
+	margin: 0;
+	padding: 0;
+	color:darkslategrey;
+	text-shadow: 1px 1px 2px #FFFFFF; 
+}
+h8{
+	font-size: 3.2vw;
+	height: 100%;
+}
+.myPage{
+	padding: 2%;
+}
+.myDataOutput,.myDataOutputHeader{
+	color:darkslategrey;
+	border:1px solid #555555;
+	border-radius: 4px;
+	background-color: rgba(255,255,255,0.6);
+	box-shadow: 
+	         2px 2px 1px rgba(130,130,130,0.7);
+	text-align: center;
+	width:100%;
+}
+.myDataOutputHeader{
+	background-color: rgba(0,156,0,0.6);
+	width:100%;
+	margin: 0;
+	padding: 0;
+}
+.myBox1{
+	width:33%;
+	border:0px;
+}
+.myDataOutput p{
+	margin-left: 4%;
+	font-weight: 900;
+	font-size: 2vw;
+	text-shadow: 4px 4px 8px #AAAAAA; 
+}
+/*register page*/
+.regProfile{
+	background: rgba(224,224,224,0.6);
+	border:1px solid grey;
+	border-bottom: 1px solid lightgrey;
+	opacity: 0.9;
+	border-radius: 5px 5px 0px 0px;
+	box-shadow: 0 9px 20px -5px rgba(0,0,0,0.8);
+	transition:  background 0.4s ease-in-out;
+}
+/*calculator*/
+.calculator,.loadWindow,.myQuestion,.pageMacros{
+	padding-bottom: 10%;
+	width:100%;
+	background: lightgrey;
+	border:1px solid darkgrey;
+	border-top: 1px solid lightgrey;
+	border-radius: 0px 0px 5px 5px;
+	transition:  all 0.4s ease-in-out;
+    position: relative;
+	box-shadow:  1px 1px 0 0 rgba(0,0,0,1),0 9px 20px -5px rgba(0,0,0,0.8);
+}
+.loadWindow input{
+	font-size: 2.5vmin;
+	padding: 1%;
+	margin: 2%;
+	background-color: #E0BA96;
+	text-align: left;
+	width:40%;
+	height:30px;
+	
+}
+.tooltip{
+	display: inline;
+    position: relative;
+}
+.tooltip p{
+	display: inline;
+}
+.tooltip i{
+	color:lightgoldenrodyellow;
+}
+.tooltip:hover:before{
+	content:attr(data-help);
+    background: #333;
+    background: rgba(0,0,0,.8);
+    border-radius: 5px;
+    bottom: 100%;
+    color: yellowgreen;
+    left: 0%;
+    padding: 2% 6%;
+    position: absolute;
+    z-index: 99;
+	width:40vw;
+	font-size: 1.5vmax;
+    overflow: hidden;    
+}
+
+.calculator input,.myWorkout input{
+	float:left;
+	font-size: 2.5vmin;
+	padding: 1%;
+	background-color: #E0BA96;
+	text-align: center;
+	width:55%;
+	height:30px;
+	position: relative;
+}
+.pageMacros input,.pageMacros .myInput{
+	font-size: 2.5vmin;
+	padding: 1%;
+	background-color: lightyellow;
+	text-align: center;
+	width:20%;
+	height:30px;
+	position: relative;
+}
+.pageMacros .myInput{
+	width:100%;
+}
+.calculator label,.myWorkout label{
+	float:left;
+	width:30%;
+	margin:2% 10% 2% 6%;
+}
+.loadWindow label{
+    margin-left: 25%;
+}
+.pageMacros label{
+   width:60%;
+}
+.weightFormula{
+	width:100%;
+}
+.marineFormula{
+	float:left;
+	width:60%;
+}
+.marineFormula input,.marineFormula h3,.marineFormula h4{
+	display:inline;
+	width:30%;
+}
+.marineFormula h3{
+	width:50%;
+    margin: 0 0 0 2%;	
+}
+.marineFormula h4{
+	width:8%;
+    margin-left:2%;
+}
+
+.deviderOr{
+	width:10%;
+	float:left;
+	border-left:1px solid blue;
+	padding:9% 1px;
+}
+.deviderOr h3{
+	color:greenyellow;
+}
+.fatFormula{
+	float:right;
+	width:30%;
+    padding : 0 2%;
+}
+.fatFormula h3,.fatFormula label{
+	display:block;
+	width:100%;
+}
+.daybox{
+    width:100%;
+    height:auto;
+    -webkit-transition:all linear 0.5s;
+    transition:all linear 0.5s;
+    color: beige;
+    text-shadow: 2px 2px 4px #000000;
+}
+.daybox input{
+	margin-left: 5%;
+}
+.calculator ul,.myWorkout ul,.loadWindow ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    cursor:pointer;
+}
+.loadWindow ul{
+	text-align: center;
+}
+.calculator .selectorLi,.myWorkout .selectorLi,.loadWindow .selectorLi{
+    border-radius: 8px;
+    padding: 4%;
+    color: greenyellow;
+	background-color: #808080;
+    text-decoration: none;
+    opacity: 0.7;
+    border-style:outset;
+}
+.calculator .selectorLi,.myWorkout .selectorLi{
+	float: left;
+	border-radius: 25%;
+}
+.loadWindow .selectorLi{
+	width:80%;
+	margin: 3px auto;
+}
+.foodList {
+	width:100%;
+}
+.foodList .selectorLi{
+	 border-radius: 8px;
+	 width:100%;
+	 display: -webkit-flex;
+     flex-direction:row;
+     align-items: flex-start;
+     justify-content: flex-start;
+}
+.intencityPicker .selectorLi{
+	width:40%;
+	margin: 4%;
+    padding: 2% 0 4% 2%;
+	height:45px;
+	text-decoration: none;
+    box-sizing: border-box;
+	text-align: center;
+	border-radius: 0px;
+	
+}
+.calculator .selectorLi:hover,.myWorkout .selectorLi:hover,.loadWindow .selectorLi:hover {
+    background-color: #555;
+    color: white;
+    border-radius: 20%;
+    opacity: 1;
+	
+      -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+
+.intencityPicker .selectorLi:hover,.loadWindow .selectorLi:hover{
+	  border-radius: 0%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+.activitySed{
+	background: url('../images/DietHelperSprite.png') no-repeat 0px -169px;	
+}
+.activityLig{
+	background: url('../images/DietHelperSprite.png') no-repeat -4px -115px;
+}
+.activityNor{
+		background: url('../images/DietHelperSprite.png') no-repeat -3px -60px;
+}
+.activityVer{
+background: url('../images/DietHelperSprite.png') no-repeat 0px 0px;
+}
+.selector,.disabledSelector{
+	width:40%;
+	float:left;
+	border:1px solid black;
+	margin: 4%;
+    padding: 2% 0 4% 2%;
+	height:45px;
+    box-sizing: border-box;
+	background-color: grey;
+	text-align: center;
+}
+.disabledSelector{
+	opacity: 0.6;
+}
+mymacros{
+    position: relative;
+}
+.pageMacros{
+    min-height:500px;
+}
+.selectPage{
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-bottom: 0px;
+	text-align: center;
+    position: absolute;
+    width:120px;
+    height:25px;
+    margin: 0;
+    padding: 0;
+	opacity: 1;
+    right:-75px;
+    border-radius: 8px 8px 0 0; 
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+    cursor: pointer;
+    box-shadow: 
+             4px -4px 2px rgba(130,130,130,0.7);
+}
+.selectPage1{
+    background-color: blue;
+    top:60px;
+    z-index: 10;
+}
+.selectPage2{
+    background-color: rosybrown;
+    top:170px;
+   z-index: 9;
+}
+.selectPage3{
+    background-color: green;
+    top:280px;
+  z-index: 8;
+}
+.selectPage:hover{
+   height : 29px; 
+    box-shadow : 6px -6px 3px rgba(130,130,130,0.5);
+    z-index: 99;
+}
+.selectedPage{
+   height : 29px;  
+    box-shadow : 6px -6px 3px rgba(150,150,150,0.5);
+   z-index: 90;
+}
+.selectPage h6{
+    color:aliceblue;
+    text-shadow: 2px 2px 4px #000000; 
+    margin-top:1%;
+    font-size: 18px;
+}
+.selectPage h6:hover{
+    color:aqua;
+}
+.selectedPage h6{
+    color:yellow;
+}
+.foodList h6{	
+    color: midnightblue;
+    text-shadow: 2px 2px 4px #AAAAAA;
+}
+.disabledSelector p{
+	color: darkgray;
+}
+.selector:hover{
+	box-shadow: 1px 1px 0 0 rgba(0,0,0,1);
+	cursor: pointer;
+}
+ul .selected,.selected{
+	background-color: blue;
+}
+.selectorLi.selected{
+	background-color: blue;
+}
+.myButton{
+	display: block;
+	width:100%;
+	text-align: center;
+	padding: 2px;
+    cursor: pointer;
+	padding: 2% 8% ;
+	margin: 5% auto;
+    background: lightgrey;
+	border:1px solid darkgrey;
+	border-radius: 5px;
+	box-shadow: 1px 1px 0 0 rgba(0,0,0,1),
+                0 9px 20px -5px rgba(0,0,0,0.8);
+
+}
+.myButton:active{
+	box-shadow: 1px 1px 0 0 rgba(0,0,0,1),
+             1vmax 1vmax 0.5vmax rgba(130,130,130,0);
+	transition:  box-shadow 0.1s ease-in-out;
+}
+.myButton2{
+	display: block;
+	cursor: pointer;
+	margin: 0;
+	box-shadow: 1px 1px 0 0 rgba(0,0,0,1); 
+	padding: 2%; 
+	width:40%;
+}
+.myButton2 h6:hover{
+	color:greenyellow;
+}
+form h6{
+	color:midnightblue;
+	text-shadow: 2px 2px 4px #AAAAAA; 
+}
+.showFood{
+	color:blue;
+}
+.myBtnBox{
+	width:20%;
+	min-width: 17vw;
+}
+.myBoxLeft{
+    float:left;
+}
+.myBoxRight{
+    float:right;
+}
+.myBoxCenter{
+   padding-left:45%;
+}
+.myBtnBox h4:hover{
+	color:greenyellow;
+}
+/*pic for js use*/
+#smokepic
+{
+  display:none;
+}
+/*by changing z-ndex can stop site items interaction with mouse */
+.stopper{
+	width:100vw;
+    height:100vh;
+	position: fixed;
+	z-index:-98;
+	background-color: rgba(255,250,100,0.5);
+}
+/*General site*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+/*	border:1px solid white;*/
+
+}
+body, html {
+    background-color: transparent;
+
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+a{
+	text-decoration: none;
+}
+p,h1,h2,h3,h4{
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+/*transparent box on top of background+whiite area*/
+.myAlert,.myGreeting,.myAddProduct{
+    position: fixed;
+    z-index:90;
+    width:30vw;
+    height:auto;
+    background-color: rgb(129, 218, 129);
+    opacity: 0.8;
+    color:midnightblue;
+    top:40px;
+    left:35vw;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 1px 1px 0 0 rgba(0,0,0,1),  
+               0 9px 20px -5px rgba(0,0,0,0.8);
+
+}
+.myAddProduct{
+	opacity: 1;
+	width:40vw;
+	left:30vw;
+}
+.myGreeting{
+	width:100vw;
+    height:20px;
+	background: white; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, transparent ,,white,white,transparent); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(left, transparent ,white,white,transparent); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(left, transparent ,white,white,transparent); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to left, transparent ,white,white,transparent); /* Standard syntax */
+    opacity: 1;
+    color:limegreen;
+	left:0px;
+    top:0px;
+    border-radius: 0px;
+    box-shadow:  0px 0px 0 0 rgba(0,0,0,1);
+}
+.langSelect{
+	position:fixed;
+	width:10vw;
+	min-width: 28px;
+	bottom:4vh;
+	right:25px;
+	z-index: 95;
+	background: #99672A;
+}
+.langSelect h3{
+	float: none;
+}
+.lanCaretDown{
+	display: none;
+}
+.langSelect div{
+	width:10vw;
+	min-width: 28px;
+	height:4vh;
+	text-align: center;
+	color :white;
+	border:1px solid white;
+}
+.langSelect:hover{
+	height:auto;
+	cursor: pointer;
+}
+.articlebox{
+	background: transparent;
+	width:100vw;
+    height:96vh;
+	overflow-y: scroll;
+	position:fixed;
+	z-index:1;
+/*    padding-right: 5%;*/
+}
+.article{
+	width:80%;
+	margin:0;
+	margin-left: 4%;  
+	padding:2% ;
+	padding-top:6% ;
+	background-color: rgba(255,255,255,0.5);
+	cursor: default;
+}
+.articleWrap{
+	white-space:pre-wrap;
+}
+.menu1,.menu2,.menu3,.quote{
+	display: none;
+}
+/*@footer Copiright,menu,logo*/
+myfooter{
+  width:100%;
+  height:4vh;
+  background-color: rgba(0,0,0,0.7);
+  position: fixed;
+  bottom: 0;
+  z-index: 97;
+  background-image: url('../images/logo2w.png');
+  background-repeat: no-repeat;
+  background-position:bottom right;
+  background-size: auto 100% ;
+}
+.cop,.menufooter{
+  float:left;
+  height: 100%;
+  width:20vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+.copText{
+	text-shadow: 2px 2px 4px #6E3307;
+	font-size: 1.8vh;
+	cursor: default;
+}
+.menufooter{
+    width:15vw;
+	margin-left: 2%;
+    text-shadow: 2px 2px 4px #6E3307;
+    font-size: 1.8vh;
+}
+.menufooter:hover{
+  color: #E5CBAD;
+	cursor: pointer;
+}
+
+/*@background	*/
+.background{
+  width:100vw;
+  height:100vh;
+  position: fixed;
+  background-image: url('../images/tropical.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:bottom left;
+}
+/*************************************/
+/*@computer/tablet for width > 800px */
+@media only screen and (min-width: 600px){
+  .lanCaretDown{
+	position: absolute;
+	right:0;
+	top: 0;
+      display: block;
+  }
+  .langSelect:hover{
+	height:auto;
+	cursor: pointer;
+  }
+  .langSelect:hover .lanCaretDown{
+    bottom:0;
+	top:auto;
+  }
+  .langSelect{
+	overflow:hidden;
+	height:25px;
+    width:6vw;
+   }
+   .langSelect div{
+	width:6vw;
+    height:25px;
+   }
+  .article{
+  	width:60%;
+	margin: 0 auto;
+    padding-top:3% ;
+  }
+  .tooltip:hover:before{
+		width:30vw;
+  }	
+  .myQuestionBox{
+	  left:22vw;
+  }
+  /*@background	*/
+  .background{
+  	background-position:bottom right;
+  }	
+  /*@quotebox and text*/
+  #quotebox{
+    background-image: url('../images/quotebox.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width:80%;
+    padding-top:85.5% ;
+    position:absolute;
+    bottom:17%;
+    left:2%;
+  }
+  .quote{
+	display: block;
+    position:absolute;
+    bottom:21.5%;
+    left:15%;
+    color: #6E3307;
+    text-shadow: 2px 2px 4px #ffffff;
+  	font-size: 1.3vw;
+    width:50%;
+    cursor: default;
+  }
+
+  /* *********************************************	*/
+  /*S@quotebox in case screen ratio more then 17/9	*/
+  @media only screen and (min-aspect-ratio: 17/9)
+  {
+   #quotebox{
+     background-image: url('../images/quotebox2.png');
+     width:45%;
+     padding-top:70% ;
+     bottom:14%;
+     left:65%;
+   }
+   .quote{
+     bottom:15.9%;
+     left:79%;
+   	 font-size: 1.2vw;
+     width:29%;
+   }
+  }
+  /* @signpost with OWL	*/
+  #menu,.menubox{
+    position: fixed;
+	background-image: url('../images/signowl.png');
+	background-repeat: no-repeat;
+	background-position: bottom left;
+	background-size: contain;
+	bottom:0;
+    padding-top:217.5%;
+    width:20%;
+    z-index: 1;
+  }
+  /* @menubox transparrent box on top of signpost with clickable text*/
+  .menubox{
+    background: transparent;
+    z-index: 2;
+  }  
+/*@signpost menu items	*/
+  .menu1,.menu2,.menu3{
+	display: block;  
+    position: absolute;
+	color: #6E3307;
+    text-shadow: 2px 2px 4px #ffffff;
+	font-size: 2.2vw;
+	-ms-transform: rotate(4deg); /* IE 9 */
+    -webkit-transform: rotate(4deg); /* Safari */
+	transform: rotate(4deg); 
+    bottom:13.6%;
+    left:26%;
+	width:50%;
+	text-align: center;
+  }
+  .menu2{
+	bottom: 10.4%;
+	left: 30%;
+	-ms-transform: rotate(-6deg); /* IE 9 */
+    -webkit-transform: rotate(-6deg); /* Safari */  
+	transform: rotate(-6deg);
+  }
+  .menu3{
+	-ms-transform: rotate(-3deg); /* IE 9 */
+    -webkit-transform: rotate(-3deg); /* Safari */  
+    transform: rotate(-3deg);
+    bottom: 7.7%;
+	left: 24%;
+  }
+  .menu1:hover,.menu2:hover,.menu3:hover {
+  	color: #fff;
+      text-shadow: 8px 8px 12px #ffffff;
+  	 cursor: pointer;
+  }
+  .selectedGoal{
+	   color:darkolivegreen;
+	  font-weight: 600;
+	   text-shadow: 2px 2px 4px grey;
+  }
+  /*@table picture at the right*/
+  .table{
+  	background-image: url(../images/table.png);
+	background-size: contain;
+    background-position: bottom;  
+	background-repeat: no-repeat;  
+  }	
+  .table,.tablemenu{
+	position: fixed;
+    bottom: 0;
+	right:3%;
+	width:30%;
+	padding-bottom:64.5%;
+	z-index: 0;
+  }
+  /*@tablemenu that contain interactive items(mug&smoke,menu)*/
+  .tablemenu{
+    background-color: transparrent;
+    z-index: 0;
+  }	
+  #cofeemug{
+    background-image: url('../images/cup.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    position:absolute;
+    overflow:hidden;
+    width:10%;
+    padding-top: 132%;
+    z-index: 0;
+    bottom:11vw;
+    left:53%;
+  }
+  #canvas {
+    position:absolute;
+    bottom:12.65vw;
+    left:48.45%;
+    width:15%;
+    height:5%;
+    z-index: 4;
+    border-radius: 0 0 50% 50%;
+  }
+}
+.myBlue{
+   color:blue;     
+   background: rgba(153,204,255,0.6);     
+}  
+.regProfile .myBlue{
+     background:transparent;
+}
+.myRosybrown{
+   color:rosybrown;
+   background: rgba(255,204,255,0.6);          
+}  
+.myBlack{
+   color:rosybrown;
+   background: rgba(0,0,0,0.6);          
+} 
+.myYellow{
+   color:yellow;
+   background: rgba(200,220,0,0.6);          
+}  
+.regProfile .myRosybrown{
+     background:transparent;
+}
+.myGreen{
+   color: green;
+   background: rgba(153,255,153,0.6);         
+}    
+.regProfile .myGreen{
+     background:transparent;
+}
+.myBoxFlexCol{
+	background: rgba(255,255,255,0.6);    
+    display: -webkit-flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+	border-radius: 0px 0px 5px 5px;
+}
+.myBoxFlexRow{
+	width:100%;
+	display: -webkit-flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+}
+.myPadding{
+	padding:5px;
+	margin:0 auto;
+	margin-top:10px;
+	border-top:1px solid darkgrey;
+	width:90%;
+}
+.myNoOverflow{
+	overflow-x: hidden;
+	text-overflow: ellipsis;
+	max-width: 30%;
+	min-width: 20%;
+}
+.myWordWrap{
+	word-wrap: break-word;
+}
+.myWidth15{
+	width:15%;
+}
+.myWidth25{
+	width:25%;
+}

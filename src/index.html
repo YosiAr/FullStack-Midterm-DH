@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html data-ng-app="myDietHelper">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Diet Helper</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+	<link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/css3-animate-it-master/css/animations.css">
+    <link rel="stylesheet" href="css/style.css">
+	<link  href="http://fonts.googleapis.com/css?family=Cabin:400,500,600,bold" rel="stylesheet" type="text/css" >
+	<link  href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:regular,bold" rel="stylesheet" type="text/css" >
+	<link rel="stylesheet" href="css/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="app.js"></script> 
+<!--    <link rel="stylesheet" href="css/css3-animate-it-master/css/animations-ie-fix.css">-->
+
+</head>
+
+<body>
+   <!--	 this 2 div's responcible to stop user interaction and for background respectivly  -->
+    <div class="stopper"></div>
+    <div class="background"></div>
+	
+   <!--	hamburger menu  -->
+	<myhamburger></myhamburger>
+   <!--	 directive for language selection box(bottom right of the screen)  -->
+	<mylanguagebox  data-ng-controller="dhLanguageController"></mylanguagebox>
+	
+	 <!--	 directive for greeting bar at the top  -->
+	<mygreeting data-ng-controller="dhGreetingController"></mygreeting>
+	
+	 <!--general article and ng-view -->
+	 <div class="articlebox ng-view" id="articlebox"></div>
+	
+	<!--table with cofee mug at the right of page -->
+	<div class="table">
+	</div>
+    <div class="tablemenu">
+      <canvas id="canvas"></canvas>
+      <div id="cofeemug">
+      </div>
+    </div>
+	<img id="smokepic" src="images/smokemy3.png" height="10px" width="10px">
+	
+	<!--left menu with goal selection -->
+    <mymenubox data-ng-controller="dhMenuController"></mymenubox>
+	  
+	<!--footer menu-->
+    <myfooter data-ng-controller="dhFooterController"></myfooter>
+		
+    <!--script for smoke effect on mug    -->
+    <script src="smoke.js"></script>
+</body>
+</html>

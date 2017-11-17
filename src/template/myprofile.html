@@ -1,0 +1,35 @@
+<div class="calculator">
+	  <h2>{{ data.lmodule.topicGender }}:</h2>
+      <div data-ng-class="{'selector':true,'selected' : user.current.gender==='Man'}" data-ng-click="set_Gender('Man')"><p><i class="fa fa-mars" aria-hidden="true"></i>&nbsp;{{data.lmodule.man}}</p></div>  
+	  <div data-ng-class="{'selector':true,'selected' : user.current.gender==='Woman'}" data-ng-click="set_Gender('Woman')"><p><i class="fa fa-venus" aria-hidden="true"></i>&nbsp;{{data.lmodule.woman}}</p></div>
+	 <h3>{{data.lmodule.topicAge}}:</h3>
+	 <div class="myBoxLeft">&nbsp;&nbsp;</div>
+	 <label><input name="Age" type="number" data-ng-model="user.current.age" data-ng-placeholder="user.current.age : user.current.age"><h4 >{{data.lmodule.years}}</h4></label>
+	 <div class="filler" style="border-top:1px solid darkgray; width:60%;margin:auto;"></div>
+	
+	   <h3>{{data.lmodule.topicHeight}}:</h3>
+	   <h3>{{data.lmodule.topicWeight}}:</h3>
+	  <div class="filler"></div>
+	  <label>
+		  <input class="myBoxLeft" name="Height" type="number" data-ng-model="user.current.height" data-ng-placeholder="user.current.height : user.current.height"><h6 class="myBoxLeft">{{data.lmodule.cm}}</h6>
+		   <div class="filler"></div>
+	  </label>
+	<myweight></myweight>
+	  <div class="filler"></div>
+	  <h2>{{data.lmodule.useFormulaFat}}?<div class="tooltip" data-help="{{ help.help.helpUseFatFormula }}"><p><i class="fa fa-question-circle" aria-hidden="true"></i></p></div></h2>  
+	    <div data-ng-class="{'selector':true,'selected' : user.current.formula === true}" data-ng-click="set_LBM_Formula(true)"><p>{{data.lmodule.yes}}</p></div>  
+	    <div data-ng-class="{'selector':true}" data-ng-click="set_LBM_Formula(false)"><p>{{data.lmodule.no}}</p></div> 
+	  <div class="filler"></div>
+       <myfat></myfat>
+	   <div class="filler"></div>
+	  <h2>{{data.lmodule.topicActivity}}:</h2>
+	  <div data-ng-class="{'selector':true,'activitySed':true,'selected' : user.current.activity==='Sedentary'}" data-ng-click="set_Daily_Activity('Sedentary')"><div class="tooltip" data-help="{{ help.help.helpSedentary }}"><p>{{data.lmodule.sedentary}}<i class="fa fa-question-circle" aria-hidden="true"></i></p></div></div>  
+	  <div data-ng-class="{'selector':true,'activityLig':true,'selected' : user.current.activity==='Light Activity'}" data-ng-click="set_Daily_Activity('Light Activity')"><div class="tooltip" data-help="{{ help.help.helpLightActivity }}"><p>{{data.lmodule.lightActivity}}<i class="fa fa-question-circle" aria-hidden="true"></i></p></div></div>  
+	  <div data-ng-class="{'selector':true,'activityNor':true,'selected' : user.current.activity==='Active'}" data-ng-click="set_Daily_Activity('Active')"><div class="tooltip" data-help="{{ help.help.helpActive }}"><p>{{data.lmodule.active}}<i class="fa fa-question-circle" aria-hidden="true"></i></p></div></div>  
+	  <div data-ng-class="{'selector':true,'activityVer':true,'selected' : user.current.activity==='Very Active'}" data-ng-click="set_Daily_Activity('Very Active')"><div class="tooltip" data-help="{{ help.help.helpVeryActive }}"><p>{{data.lmodule.veryActive}}<i class="fa fa-question-circle" aria-hidden="true"></i></p></div></div>  	  
+	  <div class="filler"></div>
+  </div>
+	    <div class="myBtnBox myBoxLeft"><button data-ng-class="{'myButton':true}" data-ng-click="profile_Validate('/Save'); "><h4>{{data.lmodule.bSave}}</h4></button></div>	
+   <div class="myBtnBox myBoxRight"><button data-ng-class="{'myButton':true}" data-ng-click="profile_Validate('/Macros'); "><h4>{{data.lmodule.macros}}</h4></button></div>	
+	  <div class="filler"></div>
+	   <div id="myAlert" class="myAlert"></div>

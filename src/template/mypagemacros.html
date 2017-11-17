@@ -1,0 +1,221 @@
+<div class="myPage"  data-ng-show="utility.macrosPage === 1">
+    <div class="myBoxFlexCol">	
+	   <div class="myDataOutput">
+	       <div data-ng-class="{myDataOutputHeader : true,myBoxLeft : true,myYellow:true}">
+	           <h6> {{data.lmodule.topicWeight}}:</h6>
+	       </div>
+	       <div class="myBoxCenter">
+		       <myweight></myweight>
+		   </div>
+       </div>	 
+	   <div class="filler"></div>	
+	   <myfat></myfat>
+	   <div class="filler"></div>	
+	   <div class="myPadding"></div>
+	   <div class="myDataOutput">
+	       <div data-ng-class="{myDataOutputHeader : true,myBoxLeft : true}">
+	           <h6>{{ data.lmodule.bmr }}<div class="tooltip" data-help="{{ help.help.helpBMR }}"><i class="fa fa-question-circle" aria-hidden="true"></i></div>&nbsp;:</h6>
+	       </div>
+	       <p> {{ calculate_BMR(); }} </p>
+       </div>	
+	   <div class="filler"></div>
+	   <div class="myDataOutput">
+	       <div data-ng-class="{myDataOutputHeader : true,myBoxLeft : true}">
+	           <h6>{{ data.lmodule.macros }}{{user.current.goal.direction ? " "+data.lmodule.to+" "+data.lmodule[user.current.goal.direction]+" "+data.lmodule.weight : Null}}</h6>
+	       </div>
+	       <p> {{ user.current.macros.macros ? "activity"+" "+user.current.activity+" => "+data.lmodule.calorie+" "+user.current.macros.macros+" " : NULL  }} </p>
+       </div>	 
+	   <div class="filler"></div>	
+	   <div class="myDataOutput">
+	       <div data-ng-class="{myDataOutputHeader : true,myBoxLeft : true,myBlack:true}">
+	          <h6>{{ data.lmodule.topicReqMin }}</h6>
+	       </div>
+       </div>	 
+	   <div class="filler"></div>
+	   <div class="myBoxFlexRow">
+	       <div class="myBoxLeft myDataOutput myBox1">
+	           <div data-ng-class="{myDataOutputHeader : true,myBoxLeft : true}">
+	              <h6>{{ data.lmodule.prot }}&nbsp;:</h6>
+	           </div>
+	           <p>  {{ calculate_minProt(); }} </p>
+           </div>	 
+	       <div class="myBoxLeft myDataOutput myBox1">
+	           <div data-ng-class="{myDataOutputHeader : true,myBoxLeft : true}">
+	               <h6>{{ data.lmodule.carb }}&nbsp;:</h6>
+	           </div>
+	           <p>{{ calculate_minCarb();  }}</p>
+           </div>	 
+	       <div class="myBoxLeft myDataOutput myBox1">
+	           <div data-ng-class="{myDataOutputHeader : true,myBoxLeft : true}">
+	               <h6>{{ data.lmodule.fat }}&nbsp;:</h6>
+	           </div>
+	       <p>{{ calculate_minFat();}}</p>
+           </div>
+	   </div>	   
+	   <div class="filler"></div>
+	   <div class="myDataOutput">
+	       <div data-ng-class="{myDataOutputHeader : true,myBoxLeft : true}">
+	           <h6>{{ data.lmodule.freeCal }}<div class="tooltip" data-help="{{ help.help.helpfreeCal }}"><i class="fa fa-question-circle" aria-hidden="true"></i></div>&nbsp;:</h6>
+	       </div>
+	       <p>{{ calculate_freeCal();}}</p>
+       </div>	 
+	   <div class="filler"></div>
+	</div>  
+	<div class="myPadding"></div>
+	<div class="myBoxFlexCol">	
+		<div class="foodList">
+		  <ul data-ng-repeat="food in user.current.food track by food.id">
+              <li data-ng-class="{ selectorLi : true}"  data-ng-click="">
+				  <div class="myBoxFlexColumn myNoOverflow myWordWrap">
+			         <h6 class="showFood" data-ng-click="show_Food(food.name);">{{ food.name }}</h6>
+			         <h6>{{food.weight}}{{data.lmodule.gr}}</h6>
+				  </div>
+				   <div class="myPadding"></div>
+				  <div class="myBoxFlexColumn myWordWrap myWidth15">
+			         <h6>{{data.lmodule.prot}}</h6>
+			         <h6>{{food.prot}}{{data.lmodule.gr}}</h6>
+				  </div> 
+				   <div class="myPadding"></div>
+				  <div class="myBoxFlexColumn myWordWrap myWidth25">
+			         <h6>{{data.lmodule.carb}}</h6>
+			         <h6>{{food.carb}}{{data.lmodule.gr}}</h6>
+				  </div>
+				   <div class="myPadding"></div>
+				  <div class="myBoxFlexColumn myWordWrap myWidth15">
+			         <h6>{{data.lmodule.fat}}</h6>
+			         <h6>{{food.fat}}{{data.lmodule.gr}}</h6>
+				  </div>
+				   <div class="myPadding"></div>
+				  <div class="myBoxFlexColumn myWordWrap myWidth15">
+			         <h6>{{data.lmodule.calorie}}</h6>
+			         <h6>{{food.calorie}}</h6>
+				  </div>
+				   <div class="myPadding"></div>
+				  <h6 data-ng-click="delete_Item(food.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></h6>
+			  </li>
+			  <div class="myPadding"></div>
+          </ul>
+	    </div>
+		<div class="myBoxFlexRow">	
+		   <form class="myBoxFlexRow myDataOutput">	       
+	             <h6>{{ data.lmodule.add+" " }} {{ data.lmodule.product }}</h6>
+	             <div data-ng-class="{myBoxFlexColumn : true,myGreen:true}">
+					  <h6>{{ data.lmodule.product }}</h6>
+	                 <input type="text" data-ng-model="data.product" name="field1" class="myInput" placeholder="{{ data.lmodule.product }}" />
+	             </div>
+	             <div data-ng-class="{myBoxFlexColumn : true,myGreen:true}">
+					 <div>
+					  <h6>{{ data.lmodule.amount }}</h6>
+					 </div> 
+					 <div>
+	                  <input type="text" data-ng-model="data.amount" name="field2" class="myInput" placeholder="{{ data.lmodule.amount }}" />
+					 </div>
+	             </div>
+			     <button data-ng-class="{'myButton2':true}" data-ng-click="add_Product_Entry(); ">
+                      <h6>{{ data.lmodule.add }}</h6>
+			     </button>
+		   </form>
+	    </div> 
+	</div> 	
+	<div class="myPadding"></div>
+	<form class="myBoxFlexRow">
+		<h8>
+			{{ data.lmodule.remain }}:
+		</h8> 
+		<div data-ng-class="{myBoxFlexColumn : true,myDataOutput : true}">
+		   <div>
+				 <h7>{{ user.current.macros.leftProt }}</h7>
+		   </div> 
+		   <div>
+	            <h6>{{ data.lmodule.prot }}  </h6> 
+		   </div>
+	    </div>
+		<div data-ng-class="{myBoxFlexColumn : true,myDataOutput : true}">
+		   <div>
+				 <h7>{{  user.current.macros.leftCarb }}</h7>
+		   </div> 
+		   <div>
+	             <h6>{{ data.lmodule.carb }}  </h6> 
+		   </div>
+	    </div>
+		<div data-ng-class="{myBoxFlexColumn : true,myDataOutput : true}">
+		   <div>
+				 <h7>{{  user.current.macros.leftFat }}</h7>
+		   </div> 
+		   <div>
+	             <h6>{{ data.lmodule.fat }}  </h6> 
+		   </div>
+	    </div>
+		<div data-ng-class="{myBoxFlexColumn : true,myDataOutput : true}">
+		   <div>
+				 <h7>{{  user.current.macros.leftCalorie  }}</h7>
+		   </div> 
+		   <div>
+	             <h6>{{ data.lmodule.calorie }}  </h6> 
+		   </div>
+	    </div>
+	</form> 	 
+	<div class="myPadding"></div>
+	<form class="myBoxFlexRow">
+		<h8>
+			{{ data.lmodule.balance }}:
+		</h8> 
+		<div data-ng-class="{myBoxFlexColumn : true,myDataOutput : true}">
+		   <div>
+				 <h7>{{ user.current.macros.eatenProt }}</h7>
+		   </div> 
+		   <div>
+	            <h6>{{ data.lmodule.prot }}  </h6> 
+		   </div>
+	    </div>
+		<div data-ng-class="{myBoxFlexColumn : true,myDataOutput : true}">
+		   <div>
+				 <h7>{{  user.current.macros.eatenCarb }}</h7>
+		   </div> 
+		   <div>
+	             <h6>{{ data.lmodule.carb }}  </h6> 
+		   </div>
+	    </div>
+		<div data-ng-class="{myBoxFlexColumn : true,myDataOutput : true}">
+		   <div>
+				 <h7>{{  user.current.macros.eatenFat }}</h7>
+		   </div> 
+		   <div>
+	             <h6>{{ data.lmodule.fat }}  </h6> 
+		   </div>
+	    </div>
+		<div data-ng-class="{myBoxFlexColumn : true,myDataOutput : true}">
+		   <div>
+				 <h7>{{  user.current.macros.eatenCal  }}</h7>
+		   </div> 
+		   <div>
+	             <h6>{{ data.lmodule.calorie }}  </h6> 
+		   </div>
+	    </div>
+	</form> 	 
+  </div> 
+<div data-ng-controller="dhAddProductController" data-ng-show="data.addProductWindow" data-ng-class="{myBoxFlexColumn : true,myDataOutput : true,myAddProduct:true}">
+	   <div>
+	      <h6>{{ data.lmodule.addProd }}{{ " "+product }}</h6>
+	   </div>  
+	   <div>
+	     <p>{{ data.lmodule.topicMacroNut }}:</p>
+	   </div>
+       <input type="text" data-ng-model="data.prot" name="field2" class="myInput" placeholder="{{ data.lmodule.prot }}" />
+       <input type="text" data-ng-model="data.carb" name="field2" class="myInput" placeholder="{{ data.lmodule.carb }}" />
+       <input type="text" data-ng-model="data.fat" name="field2" class="myInput" placeholder="{{ data.lmodule.fat }}" />
+       <input type="text" data-ng-model="data.calorie" name="field2" class="myInput" placeholder="{{ data.lmodule.calorie }}" />
+	   <div data-ng-class="{myBoxFlexRow : true}">
+		 <div class="myBtnBox">       
+			<button data-ng-class="{'myButton':true}" data-ng-click="cancel_Add_Entry();">
+                <h6>{{ data.lmodule.bcancel }}</h6>
+		    </button>
+         </div>
+		 <div class="myPadding"></div>
+		 <div class="myBtnBox">      
+			<button data-ng-class="{'myButton':true}" data-ng-click="add_Entry();">
+                <h6>{{ data.lmodule.add }}</h6>
+		    </button>
+         </div>
+	   </div>	
+</div>

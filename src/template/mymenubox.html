@@ -1,0 +1,12 @@
+ <div id="menu" class="animated rotateInDownLeft">
+     </div>
+<div class="menubox " >
+		<div  data-ng-class="{menu1 : true,selectedGoal : user.current.goal.direction == 'maintain' }  " data-ng-click = "set_Goal_Direction('maintain')" ><p class="animated bounceIn delay-1250">{{ data.lmodule.maintain }}</p></div>
+	    <div  data-ng-class="{menu2 : true,selectedGoal : user.current.goal.direction == 'gain' }" data-ng-click = "set_Goal_Direction('gain')"><p class="animated bounceIn delay-1250">{{ data.lmodule.gain }}</p></div>
+	    <div  data-ng-class="{menu3 : true,selectedGoal : user.current.goal.direction == 'lose' }" data-ng-click = "set_Goal_Direction('lose')"><p class="animated bounceIn delay-1250">{{ data.lmodule.lose }}</p></div>
+      
+	    <div id="quotebox" class="animated fadeIn delay-1500"></div>
+      <p class="quote animated bounceIn delay-2500">
+		 {{ data.lmodule.quoteboxText }}<i class="fa fa-smile-o" aria-hidden="true"></i>
+		 </p>
+</div>
